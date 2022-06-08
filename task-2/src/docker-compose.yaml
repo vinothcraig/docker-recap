@@ -1,15 +1,21 @@
 version: "3.9"
 
 services:
-  privileged_app:
+  child_container_1:
     image: ubuntu-task2:latest
     cap_add: 
       - all
     volumes: 
       - /sys/kernel/security:/sys/kernel/security
-      - /var/run/docker.sock:/var/run/docker.sock
+    command: ./exec.sh
+
+  child_container_2:
+    image: ubuntu-task2:latest
+    cap_add: 
+      - all
+    volumes: 
+      - /sys/kernel/security:/sys/kernel/security
     security_opt:
       - apparmor=tmp_mount_access
-
-    command: ./start.sh
+    command: ./exec.sh
   

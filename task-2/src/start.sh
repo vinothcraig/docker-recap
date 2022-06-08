@@ -1,22 +1,11 @@
 #!/bin/bash
 
-echo "Checking write access on /tmp"
-echo
-echo
-touch /tmp/file
-if [ $? -eq 0 ]; then
-	echo "Successful"
-else
-	echo "Failure"
-fi
-echo
-echo
-docker swarm init
 sleep 3
-echo "Starting child containers via swarm.."
+echo "Starting child containers.."
 echo 
 echo 
-./stack.sh up
+docker-compose.yaml up
 echo
-echo "Sleeping, Bye!"
+echo
+echo "Parent is sleeping, Bye!"
 sleep 40000
