@@ -8,8 +8,5 @@ services:
     volumes: 
       - /sys/kernel/security:/sys/kernel/security
       - /var/run/docker.sock:/var/run/docker.sock
-    security_opt:
-      - apparmor=tmp_mount_access
-
     command: ./start.sh
   
