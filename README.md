@@ -27,5 +27,5 @@
 ## Clean up
 * Bring down the stack using `./stack.sh down`
 * Clean up residual container if any using `for i in $(sudo docker ps -a | grep -v IMAGE| awk '{print $1}') ; do sudo  docker rm $i ; done`
-* Remove the images using `for j in {1..2} ; do docker rmi ubuntu-task${i}:latest ; done`
+* Remove the images using `for j in {1..2} ; do sudo docker rmi ubuntu-task${j}:latest ; done`
 * Remove the host instance from virtual box/cloud.
