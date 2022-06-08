@@ -1,0 +1,9 @@
+include <tunables/global>
+
+
+profile docker-nginx flags=(attach_disconnected,mediate_deleted) {
+  #include <abstractions/base>
+  deny /usr/bin/uname,
+  deny /usr/bin/df,
+  date
+}
