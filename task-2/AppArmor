@@ -1,9 +1,8 @@
-include <tunables/global>
+#include <tunables/global>
 
 
-profile docker-nginx flags=(attach_disconnected,mediate_deleted) {
+profile file_access flags=(attach_disconnected) {
   #include <abstractions/base>
-  deny /usr/bin/uname,
-  deny /usr/bin/df,
-  date
+  file,
+  deny /tmp/** w,
 }
