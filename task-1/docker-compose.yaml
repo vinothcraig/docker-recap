@@ -2,11 +2,11 @@ version: "3.9"
 
 services:
   privileged_app:
-    image: ubuntu-custom:v3
+    image: ubuntu-task1:latest
     cap_add: 
       - all
     command: ./start.sh
   
   non-privileged_app:
-    image: ubuntu-custom:v3
+    image: ubuntu-task1:latest
     command: ./start.sh

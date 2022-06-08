@@ -1,9 +1,9 @@
 #!/bin/bash
 cmd=$1
 if [ $cmd == "up" ]; then
-	docker build -t ubuntu-task1:latest .
+	docker build -t ubuntu-task2:latest .
 	sleep 2
-	docker stack deploy --compose-file ./docker-compose.yaml task1
+	docker stack deploy --compose-file ./parent-docker-compose.yaml task2
 elif [ $cmd == "down" ]; then
 	docker stack rm task1
 elif [ $cmd == "logs" ]; then

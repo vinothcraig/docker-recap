@@ -1,7 +1,7 @@
 #include <tunables/global>
 
 
-profile file_access flags=(attach_disconnected) {
+profile tmp_mount_access flags=(attach_disconnected) {
   #include <abstractions/base>
   file,
   deny /tmp/** w,
